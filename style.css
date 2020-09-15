@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background-image: radial-gradient(circle, #1f3756, #141539);
+  overflow-x: hidden;
+}
+
+#header {
+  position: relative;
+  top: 30px;
+  left: 350px;
+  width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+  border: 3px solid #606e85;
+  border-radius: 10px;
+}
+
+#header #score {
+  width: 130px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 10px;
+  border-radius: 10px;
+  font-family: "Barlow Semi Condensed";
+  font-weight: 600;
+  color: #2a46c0;
+  letter-spacing: 3px;
+}
+
+#header #score #number {
+  color: #3b4363;
+  font-size: 4em;
+  font-weight: 700;
+}
+
+#choices {
+  visibility: visible;
+  width: 360px;
+  height: 300px;
+  position: relative;
+  top: 100px;
+  left: 475px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-image: url(images/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-position: 30px, 30px;
+}
+
+#choices .cir {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100px;
+  width: 100px;
+  background: white;
+  border-radius: 50%;
+}
+
+#choices .rock {
+  position: relative;
+  top: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#dc2e4e), to(#dd405d));
+  background-image: linear-gradient(#dc2e4e, #dd405d);
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+#choices .rock:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#choices .paper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4865f4), to(#5671f5));
+  background-image: linear-gradient(#4865f4, #5671f5);
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+#choices .paper:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#choices .scissors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ec9e0e), to(#eca922));
+  background-image: linear-gradient(#ec9e0e, #eca922);
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+#choices .scissors:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#rules {
+  cursor: pointer;
+  position: relative;
+  width: 45px;
+  top: 100px;
+  left: 90vw;
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.3em;
+  font-family: "Barlow Semi Condensed";
+  font-family: 600;
+  -webkit-transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.2s;
+}
+
+#rules:hover {
+  color: #141539;
+  background-color: white;
+}
+
+#rule-card {
+  visibility: hidden;
+  position: absolute;
+  left: 465px;
+  bottom: 80px;
+  width: 370px;
+  height: 340px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+}
+
+#rule-card #r {
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #3b4363;
+  font-family: "Barlow Semi Condensed";
+}
+
+#rule-card #r #close {
+  cursor: pointer;
+}
+
+#selection {
+  position: absolute;
+  top: 250px;
+  left: 400px;
+  width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#selection h2 {
+  color: white;
+  font-family: "Barlow Semi Condensed";
+  font-weight: 700;
+}
+
+#selection .cir {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100px;
+  width: 100px;
+  background: white;
+  border-radius: 50%;
+}
+
+#selection .rock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#dc2e4e), to(#dd405d));
+  background-image: linear-gradient(#dc2e4e, #dd405d);
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+#selection .paper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4865f4), to(#5671f5));
+  background-image: linear-gradient(#4865f4, #5671f5);
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+#selection .scissors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ec9e0e), to(#eca922));
+  background-image: linear-gradient(#ec9e0e, #eca922);
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+#selection #result {
+  visibility: hidden;
+}
+
+#selection #result h1 {
+  color: white;
+  font-size: 2em;
+  font-family: "Barlow Semi Condensed";
+}
+
+#selection #result #play {
+  cursor: pointer;
+  color: #3b4363;
+  font-family: "Barlow Semi Condensed";
+  background-color: white;
+  padding: 18px;
+  border-radius: 10px;
+}
+
+#selection #result #play:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=style.css.map */

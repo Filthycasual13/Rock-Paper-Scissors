@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+//PRIMARY COLORS
+$scissorsGradient: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+$paperGradient: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
+$rockGradient: hsl(349, 71%, 52%), hsl(349, 70%, 56%);
+$lizardGradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+$cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+
+//NEUTRAL COLORS
+$darkText: hsl(229, 25%, 31%);
+$scoreText: hsl(229, 64%, 46%);
+$headerOutline: hsl(217, 16%, 45%);
+
+//BACKGROUND
+$radialGradient: #1f3756 to #141539;
+
+$font: 'Barlow Semi Condensed';
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle, #1f3756, #141539);
+    overflow-x: hidden;
+}
+
+#header {
+    position: relative;
+    top: 30px;
+    left: 350px;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 3px solid $headerOutline;
+    border-radius: 10px;
+
+    #score {
+        width: 130px;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding-top: 10px;
+        border-radius: 10px;
+        font-family: $font;
+        font-weight: 600;
+        color: $scoreText;
+        letter-spacing: 3px;
+
+        #number {
+            color: $darkText;
+            font-size: 4em;
+            font-weight: 700;
+        }
+    }
+}
+
+#choices {
+    visibility: visible;
+    width: 360px;
+    height: 300px;
+    position: relative;
+    top: 100px;
+    left: 475px;
+    display: flex;
+    flex-direction: row;
+    background-image: url(images/bg-triangle.svg);
+    background-repeat: no-repeat;
+    background-position: 30px, 30px;
+
+    .cir {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100px;
+        background: white;
+        border-radius: 50%;
+    }
+
+    .rock{
+        position: relative;
+        top: 170px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient($rockGradient);
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .paper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient($paperGradient);
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .scissors{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient($scissorsGradient);
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+#rules {
+    cursor: pointer;
+    position: relative;
+    width: 45px;
+    top: 100px;
+    left: 90vw;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.3em;
+    font-family: $font;
+    font-family: 600;
+    transition: ease-in-out 0.2s;
+    
+    &:hover {
+        color: #141539;
+        background-color: white;
+    }
+    
+}
+
+#rule-card {
+    visibility: hidden;
+    position: absolute;
+    left: 465px;
+    bottom: 80px;
+    width: 370px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+    #r {
+        width: inherit;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        color: $darkText;
+        font-family: $font;
+
+        #close {
+            cursor: pointer;
+        }
+    }
+}
+
+#selection {
+    position: absolute;
+    top: 250px;
+    left: 400px;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+
+
+    h2 {
+        color: white;
+        font-family: $font;
+        font-weight: 700;
+    }
+
+
+    .cir {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100px;
+        background: white;
+        border-radius: 50%;
+    }
+
+    .rock{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient($rockGradient);
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+    }
+
+    .paper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient($paperGradient);
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+    }
+
+    .scissors{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient($scissorsGradient);
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+    }
+
+    #result {
+
+        visibility: hidden;
+        h1 {
+            color: white;
+            font-size: 2em;
+            font-family: $font;
+        }
+
+        #play {
+            cursor: pointer;
+            color: $darkText;
+            font-family: $font;
+            background-color: white;
+            padding: 18px;
+            border-radius: 10px;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
